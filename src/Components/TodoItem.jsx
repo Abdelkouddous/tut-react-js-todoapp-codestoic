@@ -13,7 +13,7 @@ export default function TodoItem({ id, item, done, todos, setTodos }) {
     // setTodos(updatedTodos);
     // console.log("Tasks : ", todos);
   }
-  function handleClick(item) {
+  function handleClick(id) {
     // console.log("Done", item);
     //... take all properties from the item
     const newArray = todos.map((todo) =>
