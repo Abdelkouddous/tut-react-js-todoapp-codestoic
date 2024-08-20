@@ -11,7 +11,8 @@ export function TodoList({ todos, setTodos }) {
         //simple way
         //component way
         <TodoItem
-          key={todo.id}
+          key={todo.id} // do not extract key as a porp
+          id={todo.id} //
           item={todo.name}
           done={todo.done}
           todos={todos}

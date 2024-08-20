@@ -6,22 +6,17 @@ export default function Form({ todos, setTodos }) {
   //const [todo, setTodo] = useState("");
   //
   //=== here we have to do object===  = ==  = = = ================= ================= ================= ================= ================= ================= ================= ================= ================= ================= ================= ================= ================= =================
-  let newId = 0;
-  function incrementId(newId) {
-    return newId++;
-  }
-  const [todo, setTodo] = useState({ name: "", done: false, id: newId });
+
+  const [todo, setTodo] = useState({ name: "", done: false, id: 0 });
   const [nextId, setNextId] = useState(1);
   //
   function handleSubmit(e) {
-    incrementId(newId);
     e.preventDefault();
     //add new task to the list
     //alert("Task added: ", todo);
     //clear input field
     setTodos([...todos, todo]);
     setNextId((prevId) => prevId + 1);
-
     // Reset the todo form
     setTodo({ name: "", done: false, id: nextId });
     /**

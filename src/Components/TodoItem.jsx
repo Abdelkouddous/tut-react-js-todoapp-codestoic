@@ -1,11 +1,11 @@
 import "../css/style.css";
 import styles from "./todoitem.module.css";
 
-export default function TodoItem({ item, done, id, todos, setTodos }) {
-  function handleDelete(item) {
-    console.log("Deleting task: ", item);
+export default function TodoItem({ id, item, done, todos, setTodos }) {
+  function handleDelete(id) {
+    console.log("Deleting task: ", id);
     //youtube method
-    const newArray = todos.filter((todo) => todo.name !== item);
+    const newArray = todos.filter((todo) => todo.id !== id);
     setTodos(newArray);
     //my own method
     // const updatedTodos = [...todos];
@@ -17,7 +17,7 @@ export default function TodoItem({ item, done, id, todos, setTodos }) {
     // console.log("Done", item);
     //... take all properties from the item
     const newArray = todos.map((todo) =>
-      todo.name === item ? { ...todo, done: !todo.done } : todo
+      todo.id === id ? { ...todo, done: !todo.done } : todo
     );
     setTodos(newArray); // update the state with new array with updated tasksodos(newA)
     console.log("New array", newArray);
@@ -31,19 +31,19 @@ export default function TodoItem({ item, done, id, todos, setTodos }) {
   //=================================
 
   return (
-    <div className="task" key={item}>
+    <div className="task" key={id}>
       <div className="itemName">
         <span
           className={classNameDone}
           onClick={() => {
             //callback function
-            handleClick(item);
+            handleClick(id);
           }}
         >
-          {item}
+          {id} {item} {done === true ? "✅" : "❌"}
         </span>
         <span>
-          <button className="deleteButton" onClick={() => handleDelete(item)}>
+          <button className="deleteButton" onClick={() => handleDelete(id)}>
             X
           </button>{" "}
         </span>
