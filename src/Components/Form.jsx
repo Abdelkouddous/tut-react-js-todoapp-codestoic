@@ -12,6 +12,10 @@ export default function Form({ todos, setTodos }) {
   //
   function handleSubmit(e) {
     e.preventDefault();
+    if (todo.name.trim() === "") {
+      alert("Sorry but no empty tasks allowed!");
+      return;
+    } // Prevent adding empty tasks// Prevent adding empty tasks
     //add new task to the list
     //alert("Task added: ", todo);
     //clear input field

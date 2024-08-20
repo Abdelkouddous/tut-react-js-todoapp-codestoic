@@ -40,7 +40,8 @@ export default function TodoItem({ id, item, done, todos, setTodos }) {
             handleClick(id);
           }}
         >
-          {id} {item} {done === true ? "✅" : "❌"}
+          {/* {id} */}
+          {item} {"  "} {done === true ? "   ✅" : "   ❌"}
         </span>
         <span>
           <button className="deleteButton" onClick={() => handleDelete(id)}>
