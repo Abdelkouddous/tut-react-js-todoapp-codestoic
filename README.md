@@ -73,6 +73,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ## NOTE :
 
-THIS IS NOT MY TUTORIAL, I SHARED THE CODE TO HELP STUDENTS
+THIS IS NOT MY TUTORIAL, I SHARED THE CODE TO HELP STUDENTS, Link to the tutorial:
 
 https://www.youtube.com/watch?v=5KikXCQ6Fdk&list=PLSsAz5wf2lkK_ekd0J__44KG6QoXetZza&index=44
