@@ -1,0 +1,48 @@
+/* we have form input button elems*/
+/* form fields style*/
+.todoform {
+  background-color: #ebebeb;
+  border-radius: 12px;
+  width: 300px;
+  padding: 12px;
+  margin: 0 auto;
+  margin-top: 20px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+}
+/* input fields style*/
+.modernInput {
+  display: block;
+  width: 100%;
+  border: none;
+  background: none;
+}
+.modernInput:focus {
+  outline: none;
+}
+
+/* button fields style*/
+.modernButton {
+  display: inline-flex;
+  border: none;
+  border-radius: 6px;
+  background-color: #444444;
+  color: #61dafb;
+  margin: 6px;
+}
+
+.modernButton:hover {
+  display: inline-flex;
+  border: none;
+  cursor: pointer;
+  transform: scale(1.15);
+  border-radius: 6px;
+  /* background-color: #61dafb;
+  color: #444444; */
+  margin: 6px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: row;
+}

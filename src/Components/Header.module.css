@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  color: #61dafb;
+  font-weight: bold;
+  background-color: #444444;
+  padding: 10px;
+  border-radius: 3px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+  padding: 2px;
+  z-index: 100;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* css styling
+4 methods
+- inline styling
+- external styling
+- css modules - 1 ss for each module
+- use some libraries like tailwindCSS and bootstrap
+*/
