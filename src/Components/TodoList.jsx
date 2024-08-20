@@ -1,14 +1,19 @@
 import TodoItem from "./TodoItem";
 export function TodoList({ todos, setTodos }) {
   //needs acess to the todo to fÍind all the tasks
+  //slice method creates a new Todos table copy
+  const sortedTodos = todos
+    .slice()
+    .sort((a, b) => Number(a.done) - Number(b.done));
   return (
     <div>
-      {todos.map((todo) => (
+      {sortedTodos.map((todo) => (
         //simple way
         //component way
         <TodoItem
-          key={todo.name}
+          key={todo.id}
           item={todo.name}
+          done={todo.done}
           todos={todos}
           setTodos={setTodos}
         ></TodoItem>

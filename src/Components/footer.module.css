@@ -1,0 +1,15 @@
+.footer {
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  font-size: 1.6em;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  background-color: #444444;
+  padding: 12px;
+  align-items: center;
+}
+.spanText {
+  color: #61dafb;
+}

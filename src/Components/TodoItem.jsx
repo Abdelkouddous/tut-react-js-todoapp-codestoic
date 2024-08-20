@@ -1,11 +1,12 @@
 import "../css/style.css";
 import styles from "./todoitem.module.css";
 
-export default function TodoItem({ item, todos, setTodos }) {
+export default function TodoItem({ item, done, id, todos, setTodos }) {
   function handleDelete(item) {
     console.log("Deleting task: ", item);
     //youtube method
-    setTodos(todos.filter((todo) => todo.name !== item));
+    const newArray = todos.filter((todo) => todo.name !== item);
+    setTodos(newArray);
     //my own method
     // const updatedTodos = [...todos];
     // updatedTodos.splice(item, 1);
@@ -18,12 +19,17 @@ export default function TodoItem({ item, todos, setTodos }) {
     const newArray = todos.map((todo) =>
       todo.name === item ? { ...todo, done: !todo.done } : todo
     );
-
     setTodos(newArray); // update the state with new array with updated tasksodos(newA)
     console.log("New array", newArray);
   }
-  const classNameDone = item.done ? styles.completed : "";
-  console.log("Class Name Done", classNameDone, item.done);
+  //note there is an error here================================================================
+  //fixed the error by replacing item by done while adding
+  //done key to the todolist.jsx file
+  //wrong !!
+  //const classNameDone = item ? styles.completed : "";
+  const classNameDone = done ? styles.completed : "";
+  //=================================
+
   return (
     <div className="task" key={item}>
       <div className="itemName">

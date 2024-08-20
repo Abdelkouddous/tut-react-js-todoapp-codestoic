@@ -6,14 +6,24 @@ export default function Form({ todos, setTodos }) {
   //const [todo, setTodo] = useState("");
   //
   //=== here we have to do object===  = ==  = = = ================= ================= ================= ================= ================= ================= ================= ================= ================= ================= ================= ================= ================= =================
-  const [todo, setTodo] = useState({ name: "", done: false });
+  let newId = 0;
+  function incrementId(newId) {
+    return newId++;
+  }
+  const [todo, setTodo] = useState({ name: "", done: false, id: newId });
+  const [nextId, setNextId] = useState(1);
   //
   function handleSubmit(e) {
+    incrementId(newId);
     e.preventDefault();
     //add new task to the list
-    console.log("Task added: ", todo);
-    setTodo({ name: "", done: false }); //clear input field
+    //alert("Task added: ", todo);
+    //clear input field
     setTodos([...todos, todo]);
+    setNextId((prevId) => prevId + 1);
+
+    // Reset the todo form
+    setTodo({ name: "", done: false, id: nextId });
     /**
       The selected code snippet is using the spread operator (`...`) to create a new array and add the `todo` item to the existing `todos` array. This is a common practice in JavaScript to update state in React applications.
 
@@ -36,7 +46,15 @@ export default function Form({ todos, setTodos }) {
       <div className={styles.inputContainer}>
         <input
           className={styles.modernInput}
-          onChange={(e) => setTodo({ name: e.target.value, done: false })}
+          //added the id foreach element
+          onChange={(e) =>
+            setTodo((prevTodo) => ({
+              ...prevTodo,
+              name: e.target.value,
+              done: false,
+              id: nextId,
+            }))
+          }
           type="text"
           name="task"
           placeholder="Add a task"

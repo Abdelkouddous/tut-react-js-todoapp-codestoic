@@ -1,5 +1,6 @@
 .header {
   display: flex;
+  position: relative;
   color: #61dafb;
   font-weight: bold;
   background-color: #444444;
